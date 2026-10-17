@@ -1,0 +1,19 @@
+name = "mx001-daily-challenge-arena"
+main = "worker/index.ts"
+compatibility_date = "2026-03-01"
+
+[site]
+bucket = "build/web"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "mx001-db"
+database_id = "${D1_DATABASE_ID}"
+
+[env.staging]
+name = "mx001-staging"
+routes = ["staging.mx001.com/*"]
+
+[env.production]
+name = "mx001-production"
+routes = ["mx001.com/*"]
